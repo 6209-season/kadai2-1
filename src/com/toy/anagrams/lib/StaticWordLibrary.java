@@ -84,54 +84,54 @@ final class StaticWordLibrary extends WordLibrary {
         "unsigned",
         "traditional"};
 
-    private static final String[] SCRAMBLED_WORD_LIST = {
-        "batsartcoin",
-        "uysb",
-        "maibuguos",
-        "ratimhteci",
-        "abkclssha",
-        "ibmtpa",
-        "iccrmutsnaec",
-        "ocbmnitaoni",
-        "ocsnqeeutnyl",
-        "ocsnroitmu",
-        "edrcmeneitgn",
-        "edepdnneyc",
-        "idasbmgiauet",
-        "ydanicm",
-        "neacsplutaoni",
-        "qeiuaveltn",
-        "xerpseisno",
-        "aficilatet",
-        "rfgaemtn",
-        "ehaxedicalm",
-        "milpmeneatitno",
-        "niidtsniugsiahleb",
-        "niehiratcen",
-        "nietnret",
-        "ajav",
-        "olacilazitno",
-        "imrcpoorecssro",
-        "anivagitno",
-        "poitimazitno",
-        "aparemert",
-        "aprtcki",
-        "ipkcel",
-        "opylomprich",
-        "irogorsuyl",
-        "isumtlnaoesuyl",
-        "psceficitaoni",
-        "tsurtcreu",
-        "elixalc",
-        "ilekiwse",
-        "amanegemtn",
-        "aminupalet",
-        "amhtmetacsi",
-        "ohjtvaa",
-        "evtrxe",
-        "nuisngde",
-        "rtdatioialn"
-    };
+//    private static final String[] SCRAMBLED_WORD_LIST = {
+//        "batsartcoin",
+//        "uysb",
+//        "maibuguos",
+//        "ratimhteci",
+//        "abkclssha",
+//        "ibmtpa",
+//        "iccrmutsnaec",
+//        "ocbmnitaoni",
+//        "ocsnqeeutnyl",
+//        "ocsnroitmu",
+//        "edrcmeneitgn",
+//        "edepdnneyc",
+//        "idasbmgiauet",
+//        "ydanicm",
+//        "neacsplutaoni",
+//        "qeiuaveltn",
+//        "xerpseisno",
+//        "aficilatet",
+//        "rfgaemtn",
+//        "ehaxedicalm",
+//        "milpmeneatitno",
+//        "niidtsniugsiahleb",
+//        "niehiratcen",
+//        "nietnret",
+//        "ajav",
+//        "olacilazitno",
+//        "imrcpoorecssro",
+//        "anivagitno",
+//        "poitimazitno",
+//        "aparemert",
+//        "aprtcki",
+//        "ipkcel",
+//        "opylomprich",
+//        "irogorsuyl",
+//        "isumtlnaoesuyl",
+//        "psceficitaoni",
+//        "tsurtcreu",
+//        "elixalc",
+//        "ilekiwse",
+//        "amanegemtn",
+//        "aminupalet",
+//        "amhtmetacsi",
+//        "ohjtvaa",
+//        "evtrxe",
+//        "nuisngde",
+//        "rtdatioialn"
+//    };
     
     final static WordLibrary DEFAULT = new StaticWordLibrary();
 
@@ -155,8 +155,25 @@ final class StaticWordLibrary extends WordLibrary {
      * @param idx index of required word
      * @return word at that index in its scrambled form
      */
+    public String changeWord(int idx) {
+    	int minus = -1;
+    	String[] wd=new String[100];
+    	String sample="";
+    	for(int i=0;i<WORD_LIST[idx].length();i++) {
+    		//String[] wd=new String[100];
+    		wd[i]=String.valueOf(WORD_LIST[idx].charAt(WORD_LIST[idx].length()+minus));
+    		minus=minus-1;
+    		//System.out.print(wd[i]);
+    	}
+    	for(int j=0;j<WORD_LIST[idx].length();j++) {
+    		sample = sample+wd[j];
+    	}
+    	return sample;
+    }
+    
     public String getScrambledWord(int idx) {
-        return SCRAMBLED_WORD_LIST[idx];
+    	
+        return changeWord(idx);
     }
 
     /**
