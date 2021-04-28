@@ -32,6 +32,8 @@
 package com.toy.anagrams.ui;
 
 import com.toy.anagrams.lib.WordLibrary;
+
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Toolkit;
@@ -180,6 +182,8 @@ public class Anagrams extends JFrame {
 
         guessButton.setMnemonic('G');
         guessButton.setText("Guess");
+        guessButton.setForeground(Color.RED);
+        guessButton.setBackground(Color.black);
         guessButton.setToolTipText("Guess the scrambled word.");
         guessButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -191,6 +195,8 @@ public class Anagrams extends JFrame {
         nextTrial.setMnemonic('N');
         nextTrial.setText("New Word");
         nextTrial.setToolTipText("Fetch a new word.");
+        nextTrial.setForeground(Color.green);
+        nextTrial.setBackground(Color.black);
         nextTrial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nextTrialActionPerformed(evt);
